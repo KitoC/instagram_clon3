@@ -51,3 +51,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Added at 2018-03-29 11:04:26 +1000 by Kitoc:
 gem "haml", "~> 5.0"
+
+# Added at 2018-03-29 11:14:46 +1000 by Kitoc:
+gem "carrierwave", "~> 1.2"
+
+# Added at 2018-03-29 11:33:19 +1000 by Kitoc:
+gem "cloudinary", "~> 1.9"
