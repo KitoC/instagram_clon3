@@ -59,3 +59,6 @@ gem "carrierwave", "~> 1.2"
 gem "cloudinary", "~> 1.9"
 
 gem 'simple_form'
+
+# Added at 2018-03-29 23:11:14 +1000 by Kitoc:
+gem "devise", "~> 4.4"

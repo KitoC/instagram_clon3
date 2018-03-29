@@ -1,0 +1,21 @@
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+
+    </div>
+    <div class="col-sm">
+      <div style="background: white; border: 0.1px solid lightgrey; margin-top: 50px;">
+        <% @posts.each do |post| %>
+        <p>Username</p>
+        <img><%= image_tag post.image_url(:medium) %></img>
+        <p>Username</p>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-sm">
+
+    </div>
+  </div>
+</div>
