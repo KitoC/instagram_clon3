@@ -1,3 +1,3 @@
 class Post < ApplicationRecord
-  mount_uploader :image. PostImageUploader
+  mount_uploader :image, PostImageUploader
 end

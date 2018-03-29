@@ -57,3 +57,5 @@ gem "carrierwave", "~> 1.2"
 
 # Added at 2018-03-29 11:33:19 +1000 by Kitoc:
 gem "cloudinary", "~> 1.9"
+
+gem 'simple_form'
