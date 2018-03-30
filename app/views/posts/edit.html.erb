@@ -1,4 +1,7 @@
 
+
+
+
 <%= form_with(model: @post, local: true) do |form| %>
 
 
@@ -12,7 +15,9 @@
     <div class="col-sm">
       <form>
         <div style="margin-bottom: -20px;" class="form-group">
-          <label  class="btn btn-outline-danger btn-change-avatar btn-sm">Post one of your sick ass photos!
+          <img><%= image_tag @post.image_url(:medium), class: 'img-responsive' %></img>
+
+          <label  class="btn btn-outline-danger btn-change-avatar btn-sm">Choose a new photo to replace the old one.
             <span style="display:none;">
               <%= form.file_field :image, id: :post_url  %>
             </span>

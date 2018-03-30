@@ -14,22 +14,25 @@
   </head>
 
   <body style="background: #fafafa; ">
-      <nav class="navbar navbar-expand-lg navbar-light" style="background: white; border-bottom: 0.1px solid lightgrey;">
-      <a class="navbar-brand" href="#">Instaclon3</a>
+    <div style="background: white; border-bottom: 0.1px solid lightgrey;">
+      <nav class="navbar navbar-expand navbar-light" style="background: white;">
+      <a class="navbar-brand" href=""><%= link_to 'Instaclon3', posts_path %></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+      <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavAltMarkup">
+        <div class="navbar-nav ">
+          <!-- <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a> -->
           <a class="nav-item nav-link" href="#">New post</a>
           <a class="nav-item nav-link" href="#">Login</a>
           <a class="nav-item nav-link" href="#">Signup</a>
         </div>
       </div>
     </nav>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <!-- <p class="notice"style="margin-bottom: 0; background: white; border-bottom: 0.1px solid lightgrey;"><%= notice %></p>
+    <p class="alert" style="background: white; border-bottom: 0.1px solid lightgrey;"><%= alert %></p> -->
+  </div>
+
     <%= yield %>
   </body>
 </html>
