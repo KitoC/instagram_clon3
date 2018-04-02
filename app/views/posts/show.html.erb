@@ -10,11 +10,9 @@
 
     <div class="col-sm">
         <div style="background: white; border: 0.1px solid lightgrey; margin-top: 10px; margin-bottom: 100px;">
-        <p>Username</p>
+        <p style="font-weight: bold; margin-top: 1rem;"><%= @post.user.username %></p>
         <img><%= image_tag @post.image_url(:medium), class: 'img-responsive' %></img>
-        <p>Username</p>
-
-
+        <p style="font-weight: bold; margin-top: 1rem;"><%= @post.user.username %></p>
 
 
 
@@ -36,8 +34,8 @@
 
 
 <div class="option_buttons_menu hide">
-  <div><%= link_to 'Edit Post', edit_post_path %></div>
-    <div><%= link_to 'Delete Post', post_path(@post), method: :delete, data: {confirm: "Are you sure you want to delete this post?"} %></div>
+  <div><%= link_to 'Edit Post', edit_post_path if current_user.id == @post.user.id %></div>
+    <div><%= link_to 'Delete Post', post_path(@post), method: :delete, data: {confirm: "Are you sure you want to delete this post?"} if current_user.id == @post.user.id %></div>
     <div><%= link_to 'Back', posts_path %></div>
   </div>
 </div>

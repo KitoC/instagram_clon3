@@ -14,22 +14,8 @@
   </head>
 
   <body style="background: #fafafa; ">
-    <div style="background: white; border-bottom: 0.1px solid lightgrey;">
-      <nav class="navbar navbar-expand navbar-light" style="background: white; border-bottom: 0.1px solid lightgrey;">
-      <div class="navbar-brand"><%= link_to 'Instaclon3', posts_path %></div>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavAltMarkup">
-        <div class="navbar-nav ">
-          <!-- <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a> -->
-          <div class="nav-item nav-link" href="#"><%= link_to 'New Post', new_post_path %></div>
-          <a class="nav-item nav-link" href="#">Login</a>
-          <a class="nav-item nav-link" href="#">Signup</a>
-        </div>
-      </div>
-    </nav>
-  </div>
+
+    <%= render 'layouts/navbar' %>
 
     <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, class: [:alert, alert_for(name)] %>
