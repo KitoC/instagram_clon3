@@ -1,0 +1,25 @@
+<%= form_with(model: post, local: true) do |form| %>
+
+
+<form>
+  <div style="margin-bottom: -20px; margin-top: 15px;" class="form-group">
+    <label  class="btn btn-outline-danger btn-sm">Upload image...
+      <span style="display: none;">
+        <%= form.file_field :image, id: "pictureInput"  %>
+      </span>
+    </label>
+  </div>
+
+  <div class="form-group " >
+    <label for="exampleFormControlTextarea1"></label>
+    <div class="field" style="margin-bottom: 10px;">
+      <!-- <%= form.label :comment %> -->
+      <%= form.text_area :caption, class: "form-control", id: "exampleFormControlTextarea1", :cols => 50, :rows => 3, :placeholder => "Comment on your sick ass photo!" %>
+    </div>
+    <div class="form-group text-align-center">
+      <%= form.submit class: 'btn btn-outline-danger btn-sm' %>
+    </div>
+  </div>
+</form>
+
+<% end %>

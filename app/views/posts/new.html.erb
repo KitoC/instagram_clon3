@@ -1,5 +1,4 @@
 
-<%= form_with(model: @post, local: true) do |form| %>
 
 
 
@@ -9,32 +8,11 @@
     <div class="col-sm">
 
     </div>
-    <div class="col-sm">
-      <form>
-        <div style="margin-bottom: -20px;" class="form-group">
-          <label  class="btn btn-outline-danger btn-change-avatar btn-sm">Post one of your sick ass photos!
-            <span style="display:none;">
-              <%= form.file_field :image, id: :post_url  %>
-            </span>
-          </label>
-        </div>
-
-        <div class="form-group " >
-          <label for="exampleFormControlTextarea1"></label>
-          <div class="field" style="margin-bottom: 10px;">
-            <!-- <%= form.label :comment %> -->
-            <%= form.text_area :comment, class: "form-control", id: "exampleFormControlTextarea1", :cols => 50, :rows => 3, :placeholder => "Comment on your sick ass photo!" %>
-          </div>
-          <div class="form-group text-align-center">
-            <%= form.submit class: 'btn btn-outline-danger btn-sm' %>
-          </div>
-        </div>
-      </form>
+    <div class="col-sm" style="background: white; border: 0.1px solid lightgrey; margin-top: 10px;">
+      <%= render 'form', post: @post %>
     </div>
     <div class="col-sm">
 
     </div>
   </div>
 </div>
-
-<% end %>

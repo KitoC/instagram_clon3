@@ -1,6 +1,6 @@
 
 
-<div class="container">
+<!-- <div class="container">
   <div class="row">
     <div class="col-sm">
 
@@ -19,4 +19,73 @@
 
     </div>
   </div>
+</div> -->
+
+<%= form_with(model: @post, local: true) do |form| %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+
+    </div>
+
+    <div class="col-sm">
+      <% @posts.each do |post| %>
+        <div style="background: white; border: 0.1px solid lightgrey; margin-top: 10px; margin-bottom: 100px;">
+        <p>Username</p>
+        <img><%= link_to (image_tag post.image_url(:medium), class: 'img-responsive'), post  %></img>
+        <p>Username</p><%= post.caption %>
+
+
+
+
+
+        <div class="comment_bar">
+          <div class="comment_box"><%= form.text_area :comment, class: "comment_box", id: "", :cols => 10, :rows => 1, :placeholder => "Comment on your sick ass photo!" %></div>
+          <div class="submit_comment"><%= form.submit value: "send", class: 'btn btn-outline-danger btn-sm'  %></div>
+          <div class="open_options"><p class="dots">...</p></div>
+        </div>
+
+      </div>
+      <% end %>
+    </div>
+
+    <div class="col-sm">
+
+    </div>
+
+  </div>
 </div>
+
+
+<div class="option_buttons_menu hide">
+    <div><%= link_to 'Back', posts_path %></div>
+  </div>
+</div>
+
+<div class="close_option_buttons close_options hide" >
+  <p>x</p>
+</div>
+
+<div class="option_buttons_bg hide">
+</div>
+
+<script>
+$(document).ready(function(){
+  $(".open_options").click(function(){
+    $(".option_buttons_menu").removeClass('hide')
+    $(".close_option_buttons").removeClass('hide')
+    $(".option_buttons_bg").removeClass('hide')
+  });
+});
+
+$(document).ready(function(){
+  $(".close_options").click(function(){
+    $(".option_buttons_menu").addClass('hide')
+    $(".close_option_buttons").addClass('hide')
+    $(".option_buttons_bg").addClass('hide')
+  });
+});
+</script>
+
+<% end %>

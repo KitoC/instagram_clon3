@@ -1,26 +1,70 @@
 
 
-
+<%= form_with(model: @post, local: true) do |form| %>
 
 <div class="container">
   <div class="row">
     <div class="col-sm">
 
     </div>
+
     <div class="col-sm">
-        <div style="background: white; border: 0.1px solid lightgrey; margin-top: 10px;">
+        <div style="background: white; border: 0.1px solid lightgrey; margin-top: 10px; margin-bottom: 100px;">
         <p>Username</p>
         <img><%= image_tag @post.image_url(:medium), class: 'img-responsive' %></img>
         <p>Username</p>
-        <%= link_to 'Edit Post', edit_post_path %>
-        <%= link_to 'Delete Post', post_path(@post), method: :delete, data: {confirm: "Are you sure you want to delete this post?"} %>
 
-        <%= link_to 'Back', posts_path %>
+
+
+
+
+        <div class="comment_bar">
+          <div class="comment_box"><%= form.text_area :comment, class: "comment_box", id: "", :cols => 10, :rows => 1, :placeholder => "Comment on your sick ass photo!" %></div>
+          <div class="submit_comment"><%= form.submit value: "send", class: 'btn btn-outline-danger btn-sm'  %></div>
+          <div class="open_options"><p class="dots">...</p></div>
+        </div>
 
       </div>
     </div>
+
     <div class="col-sm">
 
     </div>
+
   </div>
 </div>
+
+
+<div class="option_buttons_menu hide">
+  <div><%= link_to 'Edit Post', edit_post_path %></div>
+    <div><%= link_to 'Delete Post', post_path(@post), method: :delete, data: {confirm: "Are you sure you want to delete this post?"} %></div>
+    <div><%= link_to 'Back', posts_path %></div>
+  </div>
+</div>
+
+<div class="close_option_buttons close_options hide" >
+  <p>x</p>
+</div>
+
+<div class="option_buttons_bg hide">
+</div>
+
+<script>
+$(document).ready(function(){
+  $(".open_options").click(function(){
+    $(".option_buttons_menu").removeClass('hide')
+    $(".close_option_buttons").removeClass('hide')
+    $(".option_buttons_bg").removeClass('hide')
+  });
+});
+
+$(document).ready(function(){
+  $(".close_options").click(function(){
+    $(".option_buttons_menu").addClass('hide')
+    $(".close_option_buttons").addClass('hide')
+    $(".option_buttons_bg").addClass('hide')
+  });
+});
+</script>
+
+<% end %>

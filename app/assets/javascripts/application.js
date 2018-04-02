@@ -13,3 +13,35 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+$(function() {
+  $('#pictureInput').on('change', function(event) {
+    var files = event.target.files;
+    var image = files[0]
+    var reader = new FileReader();
+    reader.onload = function(file) {
+      var img = new Image();
+      console.log(file);
+      img.src = file.target.result;
+      $('#target').html(img);
+    }
+    reader.readAsDataURL(image);
+    console.log(files);
+  });
+});
+
+$(document).ready(function(){
+  $(".open_options").click(function(){
+    $(".option_buttons_menu").removeClass('hide')
+    $(".close_option_buttons").removeClass('hide')
+    $(".option_buttons_bg").removeClass('hide')
+  });
+});
+
+$(document).ready(function(){
+  $(".close_options").click(function(){
+    $(".option_buttons_menu").addClass('hide')
+    $(".close_option_buttons").addClass('hide')
+    $(".option_buttons_bg").addClass('hide')
+  });
+});
